@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 // const backendUrl = process.env.REACT_APP_BACKEND_URL;
-const backendUrl = import.meta.env.REACT_APP_BACKEND_URL;
+const backendUrl = "http://internal-alb-internal-1648621600.us-east-1.elb.amazonaws.com";
 
 export default function Record() {
   const [form, setForm] = useState({
@@ -54,7 +54,7 @@ export default function Record() {
       let response;
       if (isNew) {
         // if we are adding a new record we will POST to /record.
-        response = await fetch("${backendUrl}/record", {
+        response = await fetch(`${backendUrl}/record`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

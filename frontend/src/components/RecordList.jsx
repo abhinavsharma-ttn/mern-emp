@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-const backendUrl = import.meta.env.REACT_APP_BACKEND_URL;
+const backendUrl = "http://internal-alb-internal-1648621600.us-east-1.elb.amazonaws.com";
 const Record = (props) => (
   <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
     <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
